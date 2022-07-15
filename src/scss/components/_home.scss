@@ -1,0 +1,39 @@
+@use '../utilities/_variables.scss' as *;
+
+
+
+
+nav{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color:$primary-text-color;
+    .navbar-brand{
+        font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+        color: green;
+        border:2px solid red;
+        text-align: center;
+
+        font-size: 30px;
+        margin-left: 25px;
+        // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        
+            
+    }
+    ul{
+        display: flex;
+        
+        @media screen and (max-width:748px) {
+            flex-wrap: wrap;
+        }
+
+
+        li{
+            cursor: pointer;
+            margin: 0px 20px;
+            &:hover{
+                color:$secondary-text-color;
+            }
+        }
+
+    }
+}

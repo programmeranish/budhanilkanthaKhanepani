@@ -4,9 +4,47 @@
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 #waterfall {
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  z-index: -1;
+}
+
+nav {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgb(236, 171, 30);
+}
+nav .navbar-brand {
+  font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+  color: green;
+  border: 2px solid red;
+  text-align: center;
+  font-size: 30px;
+  margin-left: 25px;
+}
+nav ul {
+  display: flex;
+}
+@media screen and (max-width: 748px) {
+  nav ul {
+    flex-wrap: wrap;
+  }
+}
+nav ul li {
+  cursor: pointer;
+  margin: 0px 20px;
+}
+nav ul li:hover {
+  color: rgb(194, 139, 19);
 }/*# sourceMappingURL=index.css.map */
