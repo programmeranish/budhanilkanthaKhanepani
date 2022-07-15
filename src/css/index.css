@@ -1,0 +1,12 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+#waterfall {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}/*# sourceMappingURL=index.css.map */
