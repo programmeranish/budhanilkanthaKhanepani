@@ -1,39 +1,64 @@
 @use '../utilities/_variables.scss' as *;
 
-
-
-
 nav{
+
+    display: flex;
+    justify-content: space-around;
     font-size: 1.8rem;
     font-weight: 600;
     color:$primary-text-color;
-    .navbar-brand{
-        font-family: Arial Black, Arial Bold, Gadget, sans-serif;
-        color: green;
-        border:2px solid red;
-        text-align: center;
-
-        font-size: 30px;
-        margin-left: 25px;
-        // text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-        
-            
-    }
+    align-items: center;
     ul{
         display: flex;
-        
+        align-items: center;
+        justify-content: center;
         @media screen and (max-width:748px) {
             flex-wrap: wrap;
         }
 
 
         li{
+            white-space: nowrap;
             cursor: pointer;
             margin: 0px 20px;
             &:hover{
                 color:$secondary-text-color;
             }
         }
+        @media  screen and (max-width:1300px) {
+            flex-direction: column;
+            display: none;
+        }
 
+    }
+
+    .navbar-brand{
+        font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+        background-image: linear-gradient(white,red);
+        text-align: center;
+        white-space: normal;
+        width: min-content;
+        background-clip: text;
+        color:transparent;
+        font-size: 60px;
+        
+        @media screen and (max-width:1300px) {
+            flex-direction: column;
+        }
+            
+    }
+    #hamburgerMenu{
+        height:50px;
+        width:50px;
+        fill:white;
+        filter: invert(81%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
+        margin-left:auto;
+        margin-right: 20px;
+        &:hover{
+            filter: invert(100%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
+        }
+        @media screen and (min-width:1301px) {
+            display:none;
+        }
     }
 }

@@ -21,20 +21,17 @@ li {
 }
 
 nav {
+  display: flex;
+  justify-content: space-around;
   font-size: 1.8rem;
   font-weight: 600;
   color: rgb(236, 171, 30);
-}
-nav .navbar-brand {
-  font-family: Arial Black, Arial Bold, Gadget, sans-serif;
-  color: green;
-  border: 2px solid red;
-  text-align: center;
-  font-size: 30px;
-  margin-left: 25px;
+  align-items: center;
 }
 nav ul {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media screen and (max-width: 748px) {
   nav ul {
@@ -42,9 +39,50 @@ nav ul {
   }
 }
 nav ul li {
+  white-space: nowrap;
   cursor: pointer;
   margin: 0px 20px;
 }
 nav ul li:hover {
   color: rgb(194, 139, 19);
+}
+@media screen and (max-width: 1300px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+  }
+}
+nav .navbar-brand {
+  font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+  background-image: linear-gradient(white, red);
+  text-align: center;
+  white-space: normal;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+  font-size: 60px;
+}
+@media screen and (max-width: 1300px) {
+  nav .navbar-brand {
+    flex-direction: column;
+  }
+}
+nav #hamburgerMenu {
+  height: 50px;
+  width: 50px;
+  fill: white;
+  filter: invert(81%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
+  margin-left: auto;
+  margin-right: 20px;
+}
+nav #hamburgerMenu:hover {
+  filter: invert(100%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
+}
+@media screen and (min-width: 1301px) {
+  nav #hamburgerMenu {
+    display: none;
+  }
 }/*# sourceMappingURL=index.css.map */
