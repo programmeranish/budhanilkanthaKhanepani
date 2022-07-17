@@ -2,6 +2,13 @@ import React, { useState, useEffect } from "react";
 
 function Home() {
   let [isMenuDisplay, setMenuDisplay] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 1300) setMenuDisplay(true);
+    });
+  }, []);
+
   function handleMenuClick() {
     console.log("before", isMenuDisplay);
 
