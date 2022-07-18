@@ -1,10 +1,10 @@
 @use '../utilities/_variables.scss' as *;
 
 nav{
-
+position: relative;
     display: flex;
     justify-content: space-around;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color:$primary-text-color;
     align-items: center;
@@ -12,6 +12,7 @@ nav{
         display: flex;
         align-items: center;
         justify-content: center;
+
         @media screen and (max-width:748px) {
             flex-wrap: wrap;
         }
@@ -26,10 +27,20 @@ nav{
             }
         }
         @media  screen and (max-width:1300px) {
+            li{
+                margin-top: 20px;
+            }
             flex-direction: column;
-            display: none;
+            position:absolute;
+            top:100px;
+            left:0;
+            width:50%;
+            animation-name: slideDown;
+            animation-timing-function: ease-in;
+            animation-duration: 500ms;
+            animation-fill-mode: forwards;
+            animation-direction: normal;
         }
-
     }
 
     .navbar-brand{
@@ -40,7 +51,7 @@ nav{
         width: min-content;
         background-clip: text;
         color:transparent;
-        font-size: 60px;
+        font-size: 24px;
         
         @media screen and (max-width:1300px) {
             flex-direction: column;
@@ -58,6 +69,7 @@ nav{
             filter: invert(100%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
         }
         @media screen and (min-width:1301px) {
+            display: none;
         }
     }
 }
