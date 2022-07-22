@@ -8,6 +8,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 #waterfall {
   height: 100%;
   width: 100%;
@@ -26,7 +30,6 @@ nav {
   justify-content: space-around;
   font-size: 1.2rem;
   font-weight: 600;
-  color: rgb(236, 171, 30);
   align-items: center;
 }
 nav ul {
@@ -40,6 +43,7 @@ nav ul {
   }
 }
 nav ul li {
+  color: rgb(236, 171, 30);
   white-space: nowrap;
   cursor: pointer;
   margin: 0px 20px;
