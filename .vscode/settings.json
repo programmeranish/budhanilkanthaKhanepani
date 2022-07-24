@@ -5,7 +5,7 @@
     {
       "format": "expanded",
       "extensionName": ".css",
-      "savePath": "~/../../src/css/"
+      "savePath": "~/../../src/css" //~ indicates the scss folder to compile
     }
   ]
 }

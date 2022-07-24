@@ -18,10 +18,14 @@ export default function Navbar() {
   }
   return (
     <nav>
-      <div className="navbar-brand">Budhanilkantha khanepani</div>
+      <Link to="/">
+        <div className="navbar-brand">Budhanilkantha khanepani</div>
+      </Link>
       {isLinksDisplay && (
         <ul className="navItems">
-          <li>Homepage</li>
+          <Link to="/">
+            <li>Homepage</li>
+          </Link>
           <Link to="/payment">
             <li>Pay Bills</li>
           </Link>
