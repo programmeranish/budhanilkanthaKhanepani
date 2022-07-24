@@ -18,12 +18,12 @@ export default function Navbar() {
   }
   return (
     <nav>
-      <Link to="/">
+      <Link to="/" onClick={handleMenuClick}>
         <div className="navbar-brand">Budhanilkantha khanepani</div>
       </Link>
       {isLinksDisplay && (
         <ul className="navItems">
-          <Link to="/">
+          <Link to="/" onClick={handleMenuClick}>
             <li>Homepage</li>
           </Link>
           <Link to="/payment">

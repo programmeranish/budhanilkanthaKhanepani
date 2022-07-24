@@ -1,20 +1,4 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-#waterfall {
-  height: 100%;
-  width: 100%;
+/*# sourceMappingURL=index.css.map */ 100%;
   position: fixed;
   top: 0px;
   -o-object-fit: cover;
@@ -114,23 +98,5 @@ nav #hamburgerMenu:hover {
 @media screen and (min-width: 1301px) {
   nav #hamburgerMenu {
     display: none;
-  }
-}
-
-@-webkit-keyframes slideDown {
-  0% {
-    top: -100px;
-  }
-  100% {
-    top: 100px;
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    top: -100px;
-  }
-  100% {
-    top: 100px;
   }
 }/*# sourceMappingURL=index.css.map */
