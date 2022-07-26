@@ -6,16 +6,11 @@ nav{
     justify-content: space-around;
     font-size: 1.2rem;
     font-weight: 600;
-    
     align-items: center;
+
     ul{
         display: flex;
-        align-items: center;
         justify-content: center;
-
-        @media screen and (max-width:748px) {
-            flex-wrap: wrap;
-        }
 
 
         li{
@@ -27,7 +22,13 @@ nav{
                 color:$secondary-text-color;
             }
         }
+        @media screen and (max-width:748px) {
+            flex-wrap: wrap;
+        }
         @media  screen and (max-width:1300px) {
+            text-align: left;
+            justify-content: start;
+            background-color: rgba(0,0,0,0.5);
             li{
                 margin-top: 20px;
             }
@@ -36,6 +37,7 @@ nav{
             top:100px;
             left:0;
             width:50%;
+            height: 100vh;
             animation-name: slideDown;
             animation-timing-function: ease-in;
             animation-duration: 500ms;

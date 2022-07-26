@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-export default function Navbar() {
+function Navbar() {
   let [isLinksDisplay, setLinksDisplay] = useState(true);
 
   useEffect(() => {
@@ -11,19 +11,27 @@ export default function Navbar() {
     });
   }, []);
 
-  function handleMenuClick() {
-    setLinksDisplay((isLinksDisplay) => {
-      return !isLinksDisplay;
-    });
+  /**
+   * @param(event) event for clicked target value
+    
+    */
+  function handleMenuClick(event) {
+    if (event.target.tagName === `LI` || event.target.tagName === `IMG`) {
+      if (window.innerWidth <= 1300) {
+        setLinksDisplay((isLinksDisplay) => {
+          return !isLinksDisplay;
+        });
+      }
+    }
   }
   return (
-    <nav>
-      <Link to="/" onClick={handleMenuClick}>
+    <nav onClick={(event) => handleMenuClick(event)}>
+      <Link to="/">
         <div className="navbar-brand">Budhanilkantha khanepani</div>
       </Link>
       {isLinksDisplay && (
         <ul className="navItems">
-          <Link to="/" onClick={handleMenuClick}>
+          <Link to="/">
             <li>Homepage</li>
           </Link>
           <Link to="/payment">
@@ -35,7 +43,9 @@ export default function Navbar() {
           <li>Login</li>
         </ul>
       )}
-      <img id="hamburgerMenu" src="hamburger-menu.svg" alt="hamburger menu" onClick={handleMenuClick} />
+      <img id="hamburgerMenu" src="hamburger-menu.svg" alt="hamburger menu" />
     </nav>
   );
 }
+
+export default Navbar;

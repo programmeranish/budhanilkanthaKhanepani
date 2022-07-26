@@ -43,13 +43,7 @@ nav {
 }
 nav ul {
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-@media screen and (max-width: 748px) {
-  nav ul {
-    flex-wrap: wrap;
-  }
 }
 nav ul li {
   color: rgb(236, 171, 30);
@@ -60,13 +54,22 @@ nav ul li {
 nav ul li:hover {
   color: rgb(194, 139, 19);
 }
+@media screen and (max-width: 748px) {
+  nav ul {
+    flex-wrap: wrap;
+  }
+}
 @media screen and (max-width: 1300px) {
   nav ul {
+    text-align: left;
+    justify-content: start;
+    background-color: rgba(0, 0, 0, 0.5);
     flex-direction: column;
     position: absolute;
     top: 100px;
     left: 0;
     width: 50%;
+    height: 100vh;
     -webkit-animation-name: slideDown;
             animation-name: slideDown;
     -webkit-animation-timing-function: ease-in;
