@@ -1,79 +1,77 @@
-@use '../utilities/_variables.scss' as *;
+@use "../utilities/_variables.scss" as *;
 
-nav{
-    position: relative;
+nav {
+  padding: 15px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.2rem;
+  font-weight: 600;
+  align-items: center;
+
+  ul {
     display: flex;
-    justify-content: space-around;
-    font-size: 1.2rem;
-    font-weight: 600;
-    align-items: center;
+    justify-content: center;
 
-    ul{
-        display: flex;
-        justify-content: center;
-
-
-        li{
-            color:$primary-text-color;
-            white-space: nowrap;
-            cursor: pointer;
-            margin: 0px 20px;
-            &:hover{
-                color:$secondary-text-color;
-            }
-        }
-        @media screen and (max-width:748px) {
-            flex-wrap: wrap;
-        }
-        @media  screen and (max-width:1300px) {
-            text-align: left;
-            justify-content: start;
-            background-color: rgba(0,0,0,0.5);
-            li{
-                margin-top: 20px;
-            }
-            flex-direction: column;
-            position:absolute;
-            top:100px;
-            left:0;
-            width:50%;
-            height: 100vh;
-            animation-name: slideDown;
-            animation-timing-function: ease-in;
-            animation-duration: 500ms;
-            animation-fill-mode: forwards;
-            animation-direction: normal;
-        }
+    li {
+      color: $primary-text-color;
+      white-space: nowrap;
+      cursor: pointer;
+      margin: 0px 20px;
+      &:hover {
+        color: $secondary-text-color;
+      }
     }
+    @media screen and (max-width: 748px) {
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 1300px) {
+      text-align: left;
+      justify-content: start;
+      background-color: rgba(0, 0, 0, 0.5);
+      li {
+        margin-top: 20px;
+      }
+      flex-direction: column;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      width: 50%;
+      height: 100vh;
+      animation-name: slideDown;
+      animation-timing-function: ease-in;
+      animation-duration: 500ms;
+      animation-fill-mode: forwards;
+      animation-direction: normal;
+    }
+  }
 
-    .navbar-brand{
-        font-family: Arial Black, Arial Bold, Gadget, sans-serif;
-        background-image: linear-gradient(white,red);
-        text-align: center;
-        white-space: normal;
-        width: min-content;
-        background-clip: text;
-        color:transparent;
-        font-size: 24px;
-        
-        @media screen and (max-width:1300px) {
-            flex-direction: column;
-        }
-            
+  .navbar-brand {
+    font-family: Arial Black, Arial Bold, Gadget, sans-serif;
+    background-image: linear-gradient(white, red);
+    text-align: center;
+    white-space: normal;
+    width: min-content;
+    background-clip: text;
+    color: transparent;
+    font-size: 24px;
+
+    @media screen and (max-width: 1300px) {
+      flex-direction: column;
     }
-    #hamburgerMenu{
-        height:50px;
-        width:50px;
-        fill:white;
-        filter: invert(81%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
-        margin-left:auto;
-        margin-right: 20px;
-        &:hover{
-            filter: invert(100%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
-        }
-        @media screen and (min-width:1301px) {
-            display: none;
-        }
+  }
+  #hamburgerMenu {
+    height: 50px;
+    width: 50px;
+    fill: white;
+    filter: invert(81%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
+    margin-left: auto;
+    margin-right: 20px;
+    &:hover {
+      filter: invert(100%) sepia(3%) saturate(23%) hue-rotate(321deg) brightness(83%) contrast(91%);
     }
+    @media screen and (min-width: 1301px) {
+      display: none;
+    }
+  }
 }
-

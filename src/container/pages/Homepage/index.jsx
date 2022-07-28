@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import Tabs from "../../../components/Tabs";
+import { getFakeNews, getFakeNotices } from "../../../FakeData/FakeNews/getFakeNews";
 
 function Homepage() {
   useEffect(() => {
@@ -11,13 +13,21 @@ function Homepage() {
       window.removeEventListener("scroll", scrollVideo);
     };
   }, []);
+
   return (
-    <div>
+    <>
       <video id="waterfall" src="waterfall.mp4" type="video/mp4" muted loop autoPlay></video>
       <div className="container">
-        <div className="intro-section">Khane pani budhanilkantha</div>
+        <div className="tabs-section">
+          <Tabs
+            headers={[
+              { heading: "Notice", datas: getFakeNotices },
+              { heading: "News", datas: getFakeNews },
+            ]}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
