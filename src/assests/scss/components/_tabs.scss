@@ -28,10 +28,31 @@
     border-bottom: 0;
   }
 }
+.loading-container {
+  height: 400px;
+  position: relative;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  height: 40px;
+  width: 40px;
+  border: 5px solid red;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  border-radius: 50%;
+  animation: spin 2s ease-in-out infinite normal forwards;
+}
 
 .tabs-data {
   font-size: 1.4rem;
-  padding: 20px;
   color: brown;
+  padding: 10px 30px;
   line-height: 1.8;
+  height: 400px;
+  overflow-y: scroll;
 }

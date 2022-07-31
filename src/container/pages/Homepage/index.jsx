@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Tabs from "../../../components/Tabs";
-import { getFakeNews, getFakeNotices } from "../../../FakeData/FakeNews/getFakeNews";
 
 function Homepage() {
   useEffect(() => {
@@ -21,8 +20,8 @@ function Homepage() {
         <div className="tabs-section">
           <Tabs
             headers={[
-              { heading: "Notice", datas: getFakeNotices },
-              { heading: "News", datas: getFakeNews },
+              { heading: "Notice", url: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0c4f5ee91c1c4c0aa6c8486b46b56a22" },
+              { heading: "News", url: "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=0c4f5ee91c1c4c0aa6c8486b46b56a22" },
             ]}
           />
         </div>
