@@ -11,6 +11,7 @@ function Homepage() {
       window.removeEventListener("scroll", scrollVideo);
     };
   }, []);
+
   return (
     <div>
       <video id="waterfall" src="waterfall.mp4" type="video/mp4" muted loop autoPlay></video>
