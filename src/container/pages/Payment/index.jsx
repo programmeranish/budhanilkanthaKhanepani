@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 
 function Payment() {
-  let patientDetails = [
-    { url: "https://api.publicapis.org/entries", data: [] },
-    { url: "https://api.publicapis.org/entries", data: [] },
-    { url: "https://api.publicapis.org/entries", data: [] },
-  ];
+  //for same reference in every render
+  let patientDetails = useMemo(() => {
+    return [
+      { name: "anish", url: "https://api.publicapis.org/entries", data: 0 },
+      { name: "shrestha", url: "https://api.publicapis.org/entries", data: 0 },
+      { name: "hero", url: "https://api.publicapis.org/entries", data: 0 },
+    ];
+  }, []);
 
   let [patients, setPatients] = useState(patientDetails);
 
@@ -14,13 +17,19 @@ function Payment() {
     let promises = patientDetails.map((patient) => {
       return axios.get(patient.url);
     });
-    console.log("let promises are: ", promises);
 
     async function getData() {
-      let datas = await Promise.all(promises);
+      let responses = await Promise.all(promises);
+      setPatients((patients) => {
+        let newData = [];
+        responses.forEach((response, index) => {
+          newData.push({ ...patients[0], data: response.data.count });
+        });
+        return newData;
+      });
     }
     getData();
-  }, []);
+  }, [patientDetails]);
 
   /**
    *
@@ -39,16 +48,29 @@ function Payment() {
     document.body.removeChild(a);
   };
 
+  function loadCsvData(data) {
+    let headers = Object.keys(data[0]);
+    console.log("data to csv:", headers.join(","));
+    let detailsArray = data.map((patient) => {
+      return Object.values(patient);
+    });
+    let str = "";
+    detailsArray.forEach((row) => {
+      str = str + row.join(",");
+      str = str + "\n";
+    });
+    console.log(str);
+  }
+
   let data = ["anish shrestha,nepal,budhanlkantha", "/n", "shrestha,anish,hello world"];
 
   function handleClick() {
-    downloadCSV(data, "anishshrestha");
+    loadCsvData(patientDetails);
   }
 
   return (
     <div>
-      {patients.length}
-      something{console.log("from here", patients)}
+      {patients[0].name}:{patients[0].data}
       <button onClick={handleClick}>Download csv</button>
     </div>
   );
