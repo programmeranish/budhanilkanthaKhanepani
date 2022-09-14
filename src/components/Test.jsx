@@ -1,5 +1,5 @@
 import React from "react";
-import Select from "react-select";
+import MultiSelect from "./MultiSelect/MultiSelect";
 
 const options = [
   { value: "chocolate", label: "Chocolate" },
@@ -9,8 +9,7 @@ const options = [
 export default function Test({ InsideTest }) {
   return (
     <div>
-      hello
-      <Select options={options} isMulti />
+      <MultiSelect />
     </div>
   );
 }
