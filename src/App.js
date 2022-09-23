@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Homepage from "./container/pages/Homepage";
 import Payment from "./container/pages/Payment";
+import AddLive from "./components/Live/AddLive";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       </Routes>
       <Routes>
         <Route path="/payment" element={<Payment />} />
+        <Route path="/addlive" element={<AddLive />} />
       </Routes>
     </div>
   );
